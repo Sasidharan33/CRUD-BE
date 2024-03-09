@@ -5,7 +5,7 @@ const config = require('./config/config')
 const app = express();
 const usersrouter = require('./controllers/Users');
 const loginrouter = require('./controllers/login');
-
+const listrouter = require('./controllers/list')
 
 mongoose.set('strictQuery',false)
 
@@ -24,5 +24,5 @@ app.use(express.json())
 
 app.use('/api/users',usersrouter)
 app.use('/api/login',loginrouter)
-
+app.use('/api/list',listrouter)
 module.exports = app;
